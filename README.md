@@ -65,8 +65,6 @@ If you prefer to launch the steps manually (3 terminals):
 
 **Do not**: run `npm start` alone while Vite is not started — renderer URLs will be unreachable.
 
-**If you get a “main not found” error** (file missing under `dist-electron/`): run `npm run build:electron` at the project root.
-
 ## Vite server (`http://localhost:5173`)
 
 ### What is it used for?
@@ -96,15 +94,6 @@ Generates the UI in `dist/` and the Electron code in `dist-electron/`:
 ```bash
 npm run build
 ```
-
-Then start the app **without** the dev server (loads files from `dist/`):
-
-```bash
-npx cross-env electron .
-```
-
-(Under PowerShell, you can clear the environment variable if it lingers:  
-`$env:VITE_DEV_SERVER_URL = $null` then `npx electron .`)
 
 ## Create a Windows installer (optional)
 
