@@ -30,6 +30,9 @@ Optional for full features:
 - **[PresentMon](https://github.com/GameTechDev/PresentMon)** (FPS widget): either a **bundled copy** (place `PresentMon.exe` in `vendor/presentmon/` before `npm run electron:build` — MIT license, see `vendor/presentmon/LICENSE-PresentMon.txt`), or installation in the `PATH` / absolute path in **Settings**
 - Game `**Game.log`** file for session time and kill feed (default path like `...\StarCitizen\LIVE\Game.log`)
 
+### Caution
+- Activating ***global shortcut*** can be detected by windows as a keylogger
+
 ## Installing dependencies
 
 At the root of the repo:
