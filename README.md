@@ -30,8 +30,6 @@ Optional for full features:
 - **[PresentMon](https://github.com/GameTechDev/PresentMon)** (FPS widget): either a **bundled copy** (place `PresentMon.exe` in `vendor/presentmon/` before `npm run electron:build` — MIT license, see `vendor/presentmon/LICENSE-PresentMon.txt`), or installation in the `PATH` / absolute path in **Settings**
 - Game `**Game.log`** file for session time and kill feed (default path like `...\StarCitizen\LIVE\Game.log`)
 
----
-
 ## Installing dependencies
 
 At the root of the repo:
@@ -39,8 +37,6 @@ At the root of the repo:
 ```bash
 npm install
 ```
-
----
 
 ## Run in development
 
@@ -68,8 +64,6 @@ If you prefer to launch the steps manually (3 terminals):
 
 **If you get a “main not found” error** (file missing under `dist-electron/`): run `npm run build:electron` at the project root.
 
----
-
 ## Checks (lint and build)
 
 Before a commit or to diagnose a compilation problem:
@@ -85,8 +79,6 @@ For lint only:
 ```bash
 npm run lint
 ```
-
----
 
 ## Vite server (`http://localhost:5173`)
 
@@ -110,8 +102,6 @@ The root `**.env`** file defines `VITE_PORT` and `VITE_DEV_SERVER_URL`: they mus
 | **Browser on `/`**                       | Nothing planned: no home page at the root.                                |
 | **Production build** (`npm run build`)   | No need for this server anymore: the app reads files from `dist/` locally. |
 
----
-
 ## Build for production (local files)
 
 Generates the UI in `dist/` and the Electron code in `dist-electron/`:
@@ -129,8 +119,6 @@ npx cross-env electron .
 (Under PowerShell, you can clear the environment variable if it lingers:  
 `$env:VITE_DEV_SERVER_URL = $null` then `npx electron .`)
 
----
-
 ## Create a Windows installer (optional)
 
 After `npm run build`:
@@ -140,8 +128,6 @@ npm run electron:build
 ```
 
 The result (NSIS installer) is placed in the `**release/**` folder (see `electron-builder` configuration in `package.json`).
-
----
 
 ## Repository structure
 
@@ -180,8 +166,6 @@ The result (NSIS installer) is placed in the `**release/**` folder (see `electro
 
 The `**dist/**`, `**dist-electron/**`, `**release/**` and `**node_modules/**` folders are normally ignored by Git (see `.gitignore`).
 
----
-
 ## npm scripts (reference)
 
 | Script                   | Role                                                       |
@@ -197,7 +181,6 @@ The `**dist/**`, `**dist-electron/**`, `**release/**` and `**node_modules/**` fo
 | `npm run electron:build` | Build + installer creation in `release/`.                  |
 | `npm run preview`        | Preview the Vite build (without Electron).                 |
 
----
 
 ## Troubleshooting: global shortcut while in game
 
@@ -210,8 +193,6 @@ With **Star Citizen** in the foreground in **fullscreen** or **borderless**, the
 3. **Relaunch the overlay executable** while the app is already running: the second instance is ignored and the first one **re‑shows** the overlay (single‑instance lock). You can bind a Windows shortcut or macro to this launch.
 4. **Different key combo** in **Settings**: useful if another app uses the same key; often **not enough** if the game blocks the whole keyboard in the foreground.
 5. **Low-level keyboard hook (Windows, experimental)**: in **Settings**, tick the option to use the same shortcut via a small helper executable (`[node-global-key-listener](https://www.npmjs.com/package/node-global-key-listener)`), similar to a `WH_KEYBOARD_LL` hook. **Disabled by default**: risk of antivirus false positives, no guarantee with anti‑cheat or the game. If `WinKeyServer.exe` is not found in the packaged app, the overlay automatically falls back to the standard global shortcut.
-
----
 
 ## License and third‑party game
 
