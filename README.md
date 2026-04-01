@@ -67,22 +67,6 @@ If you prefer to launch the steps manually (3 terminals):
 
 **If you get a “main not found” error** (file missing under `dist-electron/`): run `npm run build:electron` at the project root.
 
-## Checks (lint and build)
-
-Before a commit or to diagnose a compilation problem:
-
-```bash
-npm run check
-```
-
-This command chains: Electron compilation (`build:electron`), **ESLint** (`lint`), then **production Vite build**.
-
-For lint only:
-
-```bash
-npm run lint
-```
-
 ## Vite server (`http://localhost:5173`)
 
 ### What is it used for?
